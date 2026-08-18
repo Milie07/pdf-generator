@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="fr-FR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css">
+		<title>Quittance de Loyer</title>
+	</head>
+	<body>
+<!-- QUITTANCE DU MOIS -->
+		<article class="quittance" id="quittance">
+			<section class="entete">
+				<h1 class="titre-principal">quittance de loyer</h1>
+				<p class="titre-quittance">
+					Quittance de loyer du mois de <span class="mois">{{ dateBrut }}</span> (du {{ premier }} au {{ dernier }} {{ dateBrut }})</p>
+
+				<div class="entete-locataire-quittance">
+					<h2>Nom et adresse de la location :</h2>
+					<div>
+						<p class="nom-locataire">{{ nom-locataire }}</p>
+						<p>{{ adresse-locataire }}</p>
+						<p>{{ ville-locataire }}</p>
+						<p>{{ appart-locataire }}</p>
+					</div>
+				</div>
+			</section>
+
+			<section class="information-quittance">
+				<p class="detail-quittance">
+					Je soussigné Nicolas MALASSIS, représentant la {{ societe }}, propriétaire du {{ libelle-logement }} désigné ci-dessus, déclare avoir reçu la somme de {{ convertAvecCts }} (en toutes lettres), {{ loyerTtc }} euros (en chiffres), au titre du paiement du loyer et des charges pour la période de location du mois de {{ dateBrut }} (du {{ premier }} au {{ dernier }} {{ dateBrut }}) et lui en donne quittance, sous réserve de tous mes droits.
+				</p>
+
+				<div class="infos-reglement-quittance">
+					<h2>Détail du réglement</h2>
+					<div class="loyer-nu-quittance">
+						<p>Loyer:</p>
+						<p>{{ loyer }}€</p>
+					</div>
+					<div class="provision-charge-quittance">
+						<p>{{ label-charge-quittance }}</p>
+						<p>{{ charges }}€</p>
+					</div>
+					<div class="total-quittance">
+						<p>Total du loyer :</p>
+						<p>{{ loyerTtc }}€</p>
+					</div>
+				</div>
+			</section>
+
+			<p class="lieu-date-quittance">fait à Nozières, le {{ date }}</p>
+			<p class="mention-quittance">
+				Cette quittance annule tous les reçus qui auraient pu être établis précédemment en cas de paiement partiel du montant du présent terme. Elle est à conserver pendant cinq ans par le locataire (article 2224 du Code civil)
+			</p>
+		</article>
+
+<!-- AVIS D'ECHEANCE POUR LE MOIS SUIVANT -->
+		<article class="avis-echeance" id="avis-echeance">
+            <div class="entete-proprio-avis">
+                <p class="nom-proprio">{{ societe }}</p>
+				<p>1320 Chemin de Fontbonne</p>
+				<p>07270 NOZIERES</p>
+				<p>06.76.68.41.95</p>
+				<p>malassisn@gmail.com</p>
+			</div>
+			<div class="entete-locataire-avis">
+                <div>
+                    <p class="nom-locataire">{{ nom-locataire }}</p>
+                    <p>{{ adresse-locataire }}</p>
+                    <p>{{ ville-locataire }}</p>
+                    <p>{{ appart-locataire }}</p>
+                </div>
+			</div>
+            <h1 class="titre-principal titre-avis">vis d'échéance de loyer</h1>
+			<div class="information-avis">
+				<p class="monsieur">Monsieur, </p>
+                <p class="intro-avis">Par la présente, je vous prie de trouver ci-dessous le détail des sommes dues au titre de votre loyer et de vos charges pour la période allant du {{ premier }} au {{ dernier-avis }} {{ dateBrutAvis }}.
+                </p>
+                <p class="detail-avis">Comme cela est mentionné dans le {{ libelle-bail }} signé en date du {{ date-bail }} pour le {{ libelle-logement }} situé {{ adresse-locataire }} {{ ville-locataire }} ({{ appart-locataire }}), vous êtes redevable du montant et des charges chaque 10 du mois, conformément aux clauses de votre contrat de location :
+				</p>
+                <div class="detail-paiement-avis">
+                    <div class="loyer-nu-avis">
+                        <p>Montant du loyer mensuel:</p>
+                        <p>{{ loyer }}€</p>
+                    </div>
+                    <div class="provision-charge-avis">
+                        <p>{{ label-charge-avis }}</p>
+                        <p>{{ charges }}€</p>
+                    </div>
+                    <div class="total-avis">
+                        <p>Montant total à payer :</p>
+                        <p>{{ loyerTtc }}€</p>
+                    </div>
+                </div>
+                <!-- AVIS DE REGUL POUR LE NOUVEAU LOYER - S'AFFICHE 2 MOIS AVANT -->
+                <div class="regul-annuelle" id="regul">
+                    <p>Je vous informe également qu’à  compter  du  <span style="font-weight: 700;">{{ date-regul }}</span>,  votre loyer  sera  révisé conformément aux conditions prévues à votre bail. Cette révision sera effective annuellement au {{ bail-anniv }}, date anniversaire de votre bail. 
+
+                    <p class="nouveau-calcul">Calcul de révision du nouveau loyer : </p> 
+                    <p class="loyer-regul">Nouveau loyer:</p>
+
+                    <div class="div-nouveau-calcul-regul">
+                        <p>Loyer  en  cours : <span style="font-weight: 700;">{{ loyer }}</span> x nouvel  IRL  du  trimestre  de  référence  du  bail : <span style="font-weight: 700;">{{ nouvel-irl }}</span></p>
+                        <p class="trait-division-regul">IRL  du même trimestre de l'année précédente : <span style="font-weight: 700;">{{ ancien-irl }}</span></p>
+                    </div>
+
+                    <div class="div-montant-regul">
+                        <p class="nouveau-loyer-regul">Nouveau loyer hors charges:</p>
+                        <p class="montant-loyer-regul">{{ nouveau-loyer }}€</p>
+                    </div>
+
+                    <div class="div-montant-regul">
+                        <p class="charges-regul">Charges:</p>
+                        <p class="montant-charges-regul">{{ charges }}€</p>
+                    </div>
+                    <div class="div-montant-regul">
+                        <p class="total-regul">Total Loyer + Charges:</p>
+                        <p class="montant-total-regul">{{ nouveau-loyer-ttc }}€</p>
+                    </div>
+                </div>
+
+                <p class="conclusion-avis">En vous remerciant de l’attention que vous porterez à cette requête et dans l’attente de votre règlement, je vous prie d’agréer, Monsieur, l’expression de mes salutations distinguées.</p>
+			</div>
+            <p class="lieu-date-avis">fait à Nozières, le {{ date }}</p>
+		</article>
+	</body>
+</html>

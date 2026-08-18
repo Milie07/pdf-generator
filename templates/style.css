@@ -1,0 +1,179 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Arial", sans-serif;
+	font-size: 1rem;
+	height: 100vh;
+}
+
+@page quittance {
+	size: a4 portrait;
+	margin: 1.5cm;
+}
+
+@page avis-echeance {
+	size: a4 portrait;
+	margin: 1.5cm;
+}
+
+h2 {
+    font-size: 1rem;
+    text-decoration: underline;
+    margin-bottom: 15px;
+}
+
+#quittance {
+	page: quittance;
+	width: 18cm;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+	break-after: page;
+}
+
+#avis-echeance {
+	page: avis-echeance;
+	position: relative;
+	width: 18cm;
+    height: 26.7cm;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+}
+
+.titre-principal {
+    margin-top: 70px;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    border: solid 1px black;
+    text-align: center;
+    padding: 20px 40px;
+    background-color: lightsteelblue;
+}
+
+.titre-avis {
+    margin-top: 20px;
+    text-transform: lowercase;
+}
+
+.titre-avis::before{
+    content: "a";
+    text-transform: capitalize;
+}
+
+.titre-quittance {
+    margin: 40px 0px;
+    text-align: center;
+    .mois{
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}
+
+.entete-locataire-quittance, .infos-reglement-quittance {
+    border: solid 2px black;
+    padding: 10px;
+}
+
+.information-quittance, .infos-reglement-quittance {
+    margin: 40px 0px;
+}
+
+.detail-quittance {
+    line-height: 1.5rem;
+    text-align: justify;
+}
+
+.loyer-nu-quittance, .provision-charge-quittance, .total-quittance {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px;
+    margin-top: 10px;
+}
+
+.nom-locataire, .total-quittance, .provision-charge-avis, .loyer-nu-avis, .total-avis, .nouveau-calcul, .loyer-regul, .nouveau-loyer-regul, .montant-loyer-regul, .charges-regul, .montant-charges-regul, .total-regul {
+    font-weight: bold;
+}
+
+.lieu-date-quittance {
+    margin-top: 100px;
+    text-transform: uppercase;
+}
+
+.mention-quittance {
+    font-size: 0.75rem;
+    font-style: italic;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.entete-proprio-avis {
+    margin-top: 30px;
+    .nom-proprio {
+        font-weight: bold;
+    }
+}
+
+.entete-locataire-avis {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.information-avis {
+    margin: 30px 0px;
+    line-height: 1.5rem;
+    text-align: justify;
+}
+
+.monsieur, .intro-avis, .detail-avis, .detail-paiement-avis {
+    margin-bottom: 20px;
+}
+
+.loyer-nu-avis, .provision-charge-avis, .total-avis {
+    display: flex;
+    justify-content: space-between;
+}
+
+.conclusion-avis {
+    position: absolute;
+    bottom: 60px;
+    left: 10px;
+    right: 10px;
+}
+
+.lieu-date-avis {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    text-transform: uppercase;
+}
+
+.regul-annuelle {
+    display: block;
+    border: solid 2px red;
+    padding: 10px;
+}
+
+.div-nouveau-calcul-regul {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    font-size: 0.95rem;
+    .trai-division-regul {
+        border-top: solid 1px black;
+    }
+}
+
+.div-montant-regul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.montant-total-regul {
+    font-weight: bold; color: red;
+}

@@ -1,0 +1,12 @@
+node_modules/
+db/*.db
+coverage/
+*.log
+.DS_Store
+
+output/
+
+locataires.json
+
+reflexion-algo.txt
+indice.locataire.txt

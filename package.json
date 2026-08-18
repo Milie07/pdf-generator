@@ -1,0 +1,31 @@
+{
+	"name": "pdf-generator",
+	"version": "1.0.0",
+	"description": "Outil de génération de PDF pour des quittances de loyer avec template HTML / CSS - Installation en local",
+	"main": "generatePdf.js",
+	"directories": {
+		"doc": "docs"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Milie07/pdf-generator.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "MIT",
+	"type": "commonjs",
+	"bugs": {
+		"url": "https://github.com/Milie07/pdf-generator/issues"
+	},
+	"homepage": "https://github.com/Milie07/pdf-generator#readme",
+	"dependencies": {
+		"nodemon": "^3.1.14",
+		"puppeteer": "^25.8.0"
+	},
+	"allowScripts": {
+		"puppeteer": true
+	}
+}

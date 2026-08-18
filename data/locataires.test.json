@@ -1,0 +1,137 @@
+{
+	"bailleur": [
+		{
+			"sci": "",
+			"locataires": [
+				{
+					"categorie": "",
+					"nom": "",
+					"prenom": "",
+					"type": "",
+					"etage": "",
+					"loyer": 0,
+					"charge": 30,
+					"adresse": {
+						"numero": "",
+						"rue": "",
+						"code": "",
+						"ville": ""
+					},
+                    "bail": "",
+                    "regul": {
+                        "ancien": 0,
+                        "nouvel": 0 
+                    }
+				},
+
+				{
+					"categorie": "",
+					"societe": "",
+					"type": "",
+					"etage": "",
+					"loyer": 0,
+					"charge": 30,
+					"adresse": {
+						"numero": "",
+						"rue": "",
+						"code": "",
+						"ville": ""
+					},
+                    "bail": "",
+                    "regul": {
+                        "ancien": 0,
+                        "nouvel": 0 
+                    }
+				},
+
+				{
+					"categorie": "",
+					"nom": "",
+					"prenom": "",
+					"type": "",
+					"etage": "",
+					"loyer": 0,
+					"charge": 30,
+					"adresse": {
+						"numero": "",
+						"rue": "",
+						"code": "",
+						"ville": ""
+					},
+                    "bail": "",
+                    "regul": {
+                        "ancien": 0,
+                        "nouvel": 0 
+                    }
+				}
+			]
+		},
+		{
+			"sci": "",
+			"locataires": [
+				{
+					"categorie": "",
+					"nom": "",
+					"prenom": "",
+					"type": "",
+					"etage": "",
+					"loyer": 0,
+					"charge": 30,
+					"adresse": {
+						"numero": "",
+						"rue": "",
+						"code": "",
+						"ville": ""
+					},
+                    "bail": "",
+                    "regul": {
+                        "ancien": 0,
+                        "nouvel": 0 
+                    }
+				},
+
+				{
+					"categorie": "",
+					"nom": "",
+					"prenom": "",
+					"type": "",
+					"etage": "",
+					"loyer": 0,
+					"charge": 30,
+					"adresse": {
+						"numero": "",
+						"rue": "",
+						"code": "",
+						"ville": ""
+					},
+                    "bail": "",
+                    "regul": {
+                        "ancien": 0,
+                        "nouvel": 0 
+                    }
+				},
+
+				{
+					"categorie": "",
+					"nom": "",
+					"prenom": "",
+					"type": "",
+					"etage": "",
+					"loyer": 0,
+					"charge": 30,
+					"adresse": {
+						"numero": "",
+						"rue": "",
+						"code": "",
+						"ville": ""
+					},
+                    "bail": "",
+                    "regul": {
+                        "ancien": 0,
+                        "nouvel": 0 
+                    }
+				}
+			]
+		}
+	]
+}
