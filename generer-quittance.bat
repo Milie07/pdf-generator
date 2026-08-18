@@ -8,9 +8,13 @@ if not exist node_modules (
     call npm install
 )
 
-echo Génération des quittances...
+echo Bonjour Mon Maître 🫅 ! 
+echo Je génère les quittances de loyer du mois en cours pour vous...
+echo --------------------------------------
+echo ""
 node src/generatePdf.js
 
 echo.
-echo Terminé. Les PDFs sont dans le dossier output.
+echo J'ai terminé mon Maître. Les PDFs sont à votre disposition dans le dossier output. N'oubliez pas de les vérifier et de les enregistrer !!! 
+echo ❤️❤️❤️
 pause

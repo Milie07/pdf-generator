@@ -82,7 +82,7 @@ async function genererQuittances() {
                 const ancienIRL = locataire.regul.ancien;
                 const nouveauLoyer = (loyer * nouvelIRL) / ancienIRL;
                 const nouveauLoyerTtc = nouveauLoyer + charges;
-                console.log(locataire.nom, "OK");
+                console.log(sci, " -> ", locataire.nom, " - loyer TTC -> ", loyerTtc.toFixed(2), "✅");
 
                 
                 const convertEuros = convertMontantTotalEnLettres(loyerTtc);
