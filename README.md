@@ -89,8 +89,21 @@ en cliquant sur <chemin-du-repo>/pdf-generator/generer-quittance.bat
     ]
 }
 ```
-*retirer les _comment avant de copier le modèle Json*
+## Révision annuelle automatique du loyer
+1. **Chaque année**, le propriétaire saisit uniquement le nouvel indice dans `regul.nouvel` (l'ancien est recopié automatiquement).
+2. **2 mois avant la date d'effet** (1er jour du mois suivant l'anniversaire du bail), l'avis d'échéance affiche la notification. Le script écrit alors dans le JSON :
+```json
+"prochainLoyer": { "montant": 517.36, "dateEffet": "2026-11-01", "notifieLe": "2026-09-15" }
+```
+3. **Le mois précédant la date d'effet**, l'avis d'échéance affiche déjà le nouveau loyer.
+4. **Le mois de la date d'effet**, le script remplace `loyer` par le nouveau montant, recopie `nouvel` dans `ancien`, puis supprime `prochainLoyer`.
 
+- `prochainLoyer` est géré par le script : ne pas le modifier à la main.
+- Pas de notification si les indices sont à 0, identiques, ou avant le 1er anniversaire du bail.
+- Avant chaque modification, une copie est faite dans `data/locataires.backup.json`.
+- Le nouveau loyer est arrondi au centime.
+- Tester une date : `node src/generatePdf.js 2026-09-15`
+ 
 ## Structure du projet
 ```
 pdf-generator
@@ -117,11 +130,9 @@ pdf-generator
 
 ## Améliorations à prévoir
 
-- ◻ Passer en POO plutot qu'en procédural
-- ◻ Gérer le nouveau loyer dans le JSON après une regul
+- [ ] Passer en POO plutot qu'en procédural
+- ☑ Gérer le nouveau loyer dans le JSON après une regul
 
-## License
-License MIT[License.md]
 
 
 

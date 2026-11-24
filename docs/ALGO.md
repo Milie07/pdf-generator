@@ -150,6 +150,38 @@ DEBUT
 FIN
 
 ---------------------
- si regul 
-    loyer = nouveauLoyer
+## Algorythme de révision du loyer
+But -> Notifier la révision 2 mois avant sa date d'effet, puis mettre à jour le loyer du JSON à la date d'effet.
+
+POUR CHAQUE locataire
+    // ÉTAPE A : application
+    SI regul.prochainLoyer EXISTE ET debutMoisQuittance >= prochainLoyer.dateEffet ALORS
+        loyer <- prochainLoyer.montant
+        regul.ancien <- regul.nouvel
+        SUPPRIMER regul.prochainLoyer
+        jsonModifie <- VRAI
+    FIN SI
+
+    loyerQuittance <- loyer
+    SI regul.prochainLoyer EXISTE ET debutMoisAvis >= prochainLoyer.dateEffet ALORS
+        loyerAvis <- prochainLoyer.montant
+    SINON
+        loyerAvis <- loyer
+    FIN SI
+
+    // ÉTAPE B : notification
+    dateEffet <- 1er du mois suivant l'anniversaire du bail (année en cours, ou suivante si déjà passée)
+    nouveauLoyer <- ARRONDI(loyer * nouvel / ancien, 2)
+    SI ecartMois(dateEffet) = 2 ET ancien > 0 ET nouvel > 0 ET nouvel <> ancien
+       ET dateEffet >= 1er anniversaire du bail ALORS
+        afficher la notification sur l'avis
+        regul.prochainLoyer <- { montant: nouveauLoyer, dateEffet, notifieLe }
+        jsonModifie <- VRAI
+    FIN SI
+FIN POUR
+
+SI jsonModifie ALORS
+    copier locataires.json -> locataires.backup.json
+    écrire config -> locataires.json
+FIN SI
     
